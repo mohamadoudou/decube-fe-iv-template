@@ -39,13 +39,14 @@ export default function Movies({
   if (!moviesList) return <div>Loading</div>;
 
   return (
-    <div className="w-5/6 ml-auto mr-auto my-8 flex sm:w-11/12 lg:w-10/12">
+    <div className="w-11/12 ml-auto mr-auto my-8 flex sm:w-11/12 lg:w-10/12">
       <ul className="flex flex-wrap">
         {moviesList.map((movie: Movie) => (
           <li
             key={movie.id}
             className="rounded bg-gray-50 text-gray-950 overflow-hidden
-          m-1 flex-grow w-auto h-auto block shadow-sm hover:shadow-2xl sm:w-5/12 md:w-3/12 "
+          m-2 flex-grow w-auto h-auto block shadow-sm hover:shadow-2xl duration-500 
+          hover:scale-105 sm:w-5/12 md:w-3/12 lg:max-w-md"
           >
             <Link href={`/movies/${movie.id}`}>
               <Image

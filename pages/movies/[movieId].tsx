@@ -25,13 +25,13 @@ export default function Movie({
   if (!movie) return <div>Loading</div>;
 
   return (
-    <div className="w-11/12 mt-3 ml-auto mr-auto bg-gray-800 sm:w-3/5 lg:flex lg:w-2/3">
+    <div className="w-11/12 h- my-3 ml-auto mr-auto bg-gray-800 sm:w-3/5 lg:w-2/3 md:flex md:w-full  md:h-[600px]">
       <Image
-        src={`${process.env.NEXT_PUBLIC_API_IMAGE_PATH}/${movie.backdrop_path}`}
-        width={500}
-        height={600}
+        src={`${process.env.NEXT_PUBLIC_API_IMAGE_PATH}/${movie.poster_path}`}
+        objectFit="cover"
+        width={400}
+        height={400}
         alt={movie.title}
-        className="object-cover"
       />
       <div className="p-2 pt-2">
         <h3 className="font-semibold leading-4">
@@ -48,6 +48,8 @@ export default function Movie({
             </p>
             <p>{movie.vote_count} reviews</p>
           </div>
+          {/* <p>{movie.popularity}</p>
+          <p>{movie.original_language}</p> */}
         </div>
       </div>
     </div>
