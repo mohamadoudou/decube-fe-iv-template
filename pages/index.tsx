@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
-import Image from "next/image";
-import Movies from "./Movies";
+import { redirect } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 const cn = (...classes: string[]) => classes.filter(Boolean).join(" ");
@@ -10,10 +9,10 @@ export default function Home() {
     <main
       className={cn(
         "min-h-screen flex flex-col items-center justify-center p-24 gap-4",
-        inter.className,
+        inter.className
       )}
     >
-      <Movies />
+      {redirect("/movies")}
     </main>
   );
 }

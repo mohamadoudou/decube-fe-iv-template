@@ -4,19 +4,28 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'i.giphy.com',
-        port: '',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "i.giphy.com",
+        port: "",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'image.tmdb.org',
-        port: '',
-        pathname: '/t/p/w500/**',
+        protocol: "https",
+        hostname: "image.tmdb.org",
+        port: "",
+        pathname: "/t/p/w500/**",
       },
     ],
   },
-}
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/movies",
+        permanent: true,
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
